@@ -20,29 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdcb09ac-8240-45b3-b5a7-fbf4669f776c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KeyboardHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardHandler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KeyboardHandler.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/KeyboardHandler.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PacketHandler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/PacketHandler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Status.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Status.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Status.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Status.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/.idea/embarque.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../diver/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../diver/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/src/Sensors/DHT.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../diver/src/Sensors/DHT.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/src/Sensors/DHT.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../diver/src/Sensors/DHT.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/src/Sensors/SensorMonitor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../diver/src/Sensors/SensorMonitor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/src/Sensors/SensorMonitor.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../diver/src/Sensors/SensorMonitor.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/src/lib/DallasTemperature.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../diver/src/lib/DallasTemperature.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/src/lib/DallasTemperature.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../diver/src/lib/DallasTemperature.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/src/lib/OneWire.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../diver/src/lib/OneWire.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diver/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../diver/src/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="cdcb09ac-8240-45b3-b5a7-fbf4669f776c" name="Changes" comment="keymap + handle humidity" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,8 +118,17 @@
       <workItem from="1698508961464" duration="42000" />
       <workItem from="1698598759734" duration="568000" />
       <workItem from="1698599366376" duration="156000" />
-      <workItem from="1698599886769" duration="1524000" />
+      <workItem from="1698599886769" duration="1591000" />
     </task>
+    <task id="LOCAL-00001" summary="keymap + handle humidity">
+      <option name="closed" value="true" />
+      <created>1698601451479</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698601451480</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +139,10 @@
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
     <isAutomaticFoundErrors value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="keymap + handle humidity" />
+    <option name="LAST_COMMIT_MESSAGE" value="keymap + handle humidity" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
