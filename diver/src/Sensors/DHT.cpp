@@ -1,11 +1,11 @@
 /*!
  *  @file DHT.cpp
  *
- *  @mainpage DHT series of low cost temperatureSensor/humidity sensors.
+ *  @mainpage DHT series of low cost dhtSensor/humidity sensors.
  *
  *  @section intro_sec Introduction
  *
- *  This is a library for DHT series of low cost temperatureSensor/humidity sensors.
+ *  This is a library for DHT series of low cost dhtSensor/humidity sensors.
  *
  *  You must have Adafruit Unified Sensor Library library installed to use this
  * class.
@@ -73,7 +73,7 @@ void DHT::begin(uint8_t usec) {
 }
 
 /*!
- *  @brief  Read temperatureSensor
+ *  @brief  Read dhtSensor
  *  @param  S
  *          Scale. Boolean value:
  *					- true = Fahrenheit
@@ -182,7 +182,7 @@ float DHT::computeHeatIndex(bool isFahrenheit) {
  *  				Using both Rothfusz and Steadman's equations
  *					(http://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml)
  *  @param  temperature
- *          temperatureSensor in selected scale
+ *          dhtSensor in selected scale
  *  @param  percentHumidity
  *          humidity in percent
  *  @param  isFahrenheit

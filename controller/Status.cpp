@@ -102,6 +102,7 @@ std::string Status::getStatusText() {
 
     ss << "Pronfondeur: " << this->depth << "m" << std::endl;
     ss << "Temperature interne: " << this->temperature << "C" << std::endl;
+    ss << "Humidité interne: " << this->humidity << "%" << std::endl;
     ss << "Pression interne: " << this->insidePressure << "Bar" << std::endl;
     ss << "Niveau de batterie: " << (int)(this->batteryLevel/2.55) << "%" << std::endl;
     ss << "Etat du ballast: " << (int)(this->ballastFill/2.55) << "% (" << (int)((this->ballastFill /2.55) * 5)<<"ml)" << std::endl;
@@ -119,4 +120,14 @@ void Status::setIsDiving(bool _diving) {
 bool Status::getIsDiving() {
     std::lock_guard<std::mutex> guard(lck);
     return this->isDiving;
+}
+
+void Status::setHumidity(float humidity) {
+    std::lock_guard<std::mutex> guard(lck);
+    this->humidity = humidity;
+}
+
+float Status::getHumidity() {
+    std::lock_guard<std::mutex> guard(lck);
+    return this->humidity;
 }

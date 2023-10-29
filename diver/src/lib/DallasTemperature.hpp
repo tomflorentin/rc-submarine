@@ -149,28 +149,28 @@ public:
         }
     };
 
-    // sends command for all devices on the bus to perform a temperatureSensor conversion
+    // sends command for all devices on the bus to perform a dhtSensor conversion
     request_t requestTemperatures(void);
 
-    // sends command for one device to perform a temperatureSensor conversion by address
+    // sends command for one device to perform a dhtSensor conversion by address
     request_t requestTemperaturesByAddress(const uint8_t*);
 
-    // sends command for one device to perform a temperatureSensor conversion by index
+    // sends command for one device to perform a dhtSensor conversion by index
     request_t requestTemperaturesByIndex(uint8_t);
 
-    // returns temperatureSensor raw value (12 bit integer of 1/128 degrees C)
+    // returns dhtSensor raw value (12 bit integer of 1/128 degrees C)
     int32_t getTemp(const uint8_t*);
 
-    // returns temperatureSensor in degrees C
+    // returns dhtSensor in degrees C
     float getTempC(const uint8_t*);
 
-    // returns temperatureSensor in degrees F
+    // returns dhtSensor in degrees F
     float getTempF(const uint8_t*);
 
-    // Get temperatureSensor for device index (slow)
+    // Get dhtSensor for device index (slow)
     float getTempCByIndex(uint8_t);
 
-    // Get temperatureSensor for device index (slow)
+    // Get dhtSensor for device index (slow)
     float getTempFByIndex(uint8_t);
 
     // returns true if the bus requires parasite power
@@ -209,19 +209,19 @@ public:
 
     typedef void AlarmHandler(const uint8_t*);
 
-    // sets the high alarm temperatureSensor for a device
+    // sets the high alarm dhtSensor for a device
     // accepts a int8_t.  valid range is -55C - 125C
     void setHighAlarmTemp(const uint8_t*, int8_t);
 
-    // sets the low alarm temperatureSensor for a device
+    // sets the low alarm dhtSensor for a device
     // accepts a int8_t.  valid range is -55C - 125C
     void setLowAlarmTemp(const uint8_t*, int8_t);
 
-    // returns a int8_t with the current high alarm temperatureSensor for a device
+    // returns a int8_t with the current high alarm dhtSensor for a device
     // in the range -55C - 125C
     int8_t getHighAlarmTemp(const uint8_t*);
 
-    // returns a int8_t with the current low alarm temperatureSensor for a device
+    // returns a int8_t with the current low alarm dhtSensor for a device
     // in the range -55C - 125C
     int8_t getLowAlarmTemp(const uint8_t*);
 
@@ -298,7 +298,7 @@ private:
     uint8_t pullupPin;
 
     // used to determine the delay amount needed to allow for the
-    // temperatureSensor conversion to take place
+    // dhtSensor conversion to take place
     uint8_t bitResolution;
 
     // used to requestTemperature with or without delay
@@ -319,7 +319,7 @@ private:
     // Take a pointer to one wire instance
     OneWire* _wire;
 
-    // reads scratchpad and returns the raw temperatureSensor
+    // reads scratchpad and returns the raw dhtSensor
     int32_t calculateTemperature(const uint8_t*, uint8_t*);
 
 

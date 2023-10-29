@@ -1,7 +1,7 @@
 /*!
  *  @file DHT.h
  *
- *  This is a library for DHT series of low cost temperatureSensor/humidity sensors.
+ *  This is a library for DHT series of low cost dhtSensor/humidity sensors.
  *
  *  You must have Adafruit Unified Sensor Library library installed to use this
  * class.

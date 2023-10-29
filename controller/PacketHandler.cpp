@@ -14,6 +14,9 @@ void PacketHandler::handlePacket(Command command, uint8_t const *buffer) {
         case Command::INSIDE_TEMPERATURE:
             status->setTemperature(*(float*)buffer);
             break;
+        case Command::INSIDE_HUMIDITY:
+            status->setHumidity(*(float*)buffer);
+            break;
         case Command::INSIDE_PRESSURE:
             status->setInsidePressure(*(float*)buffer);
             break;

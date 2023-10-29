@@ -16,6 +16,9 @@ public:
     void setTemperature(float temperature);
     float getTemperature();
 
+    void setHumidity(float humidity);
+    float getHumidity();
+
     void setDepth(float depth);
     float getDepth();
 
@@ -45,6 +48,7 @@ public:
 private:
     uint8_t lightStatus = 0;
     float temperature = 0;
+    float humidity = 0;
     float depth = 0;
     uint8_t power = 0;
     uint8_t ballastFill = 0;

@@ -14,14 +14,14 @@
 
 class SensorMonitor {
 public:
-    SensorMonitor(RemoteControl *_control, TemperatureSensor *_temperature, DepthSensor *_insidePressure, BatteryLevelSensor *_batteryLevelSensor);
+    SensorMonitor(RemoteControl *_control, DHT *_dht, DepthSensor *_insidePressure, BatteryLevelSensor *_batteryLevelSensor);
     void work();
 
 private:
     unsigned long lastRead = 0;
 
     RemoteControl *control;
-    TemperatureSensor *temperatureSensor;
+    DHT *dhtSensor;
     DepthSensor *insidePressure;
     BatteryLevelSensor *batteryLevelSensor;
 };

@@ -21,7 +21,7 @@ extern "C" {
 #endif
 
 // OneWire commands
-#define STARTCONVO      0x44  // Tells device to take a temperatureSensor reading and put it on the scratchpad
+#define STARTCONVO      0x44  // Tells device to take a dhtSensor reading and put it on the scratchpad
 #define COPYSCRATCH     0x48  // Copy scratchpad to EEPROM
 #define READSCRATCH     0xBE  // Read from scratchpad
 #define WRITESCRATCH    0x4E  // Write to scratchpad
@@ -195,8 +195,8 @@ bool DallasTemperature::readScratchPad(const uint8_t* deviceAddress,
     _wire->write(READSCRATCH);
 
     // Read all registers in a simple loop
-    // byte 0: temperatureSensor LSB
-    // byte 1: temperatureSensor MSB
+    // byte 0: dhtSensor LSB
+    // byte 1: dhtSensor MSB
     // byte 2: high alarm temp
     // byte 3: low alarm temp
     // byte 4: DS18S20: store for crc
@@ -413,7 +413,7 @@ bool DallasTemperature::isConversionComplete() {
     return (b == 1);
 }
 
-// sends command for all devices on the bus to perform a temperatureSensor conversion
+// sends command for all devices on the bus to perform a dhtSensor conversion
 DallasTemperature::request_t DallasTemperature::requestTemperatures() {
     DallasTemperature::request_t req = {};
     req.result = true;
@@ -430,7 +430,7 @@ DallasTemperature::request_t DallasTemperature::requestTemperatures() {
     return req;
 }
 
-// sends command for one device to perform a temperatureSensor by address
+// sends command for one device to perform a dhtSensor by address
 // returns FALSE if device is disconnected
 // returns TRUE  otherwise
 DallasTemperature::request_t DallasTemperature::requestTemperaturesByAddress(const uint8_t* deviceAddress) {
@@ -457,7 +457,7 @@ DallasTemperature::request_t DallasTemperature::requestTemperaturesByAddress(con
 
 }
 
-// Continue to check if the IC has responded with a temperatureSensor
+// Continue to check if the IC has responded with a dhtSensor
 void DallasTemperature::blockTillConversionComplete(uint8_t bitResolution, unsigned long start) {
     if (checkForConversion && !parasite) {
         while (!isConversionComplete() && (millis() - start <  MAX_CONVERSION_TIMEOUT))
@@ -471,13 +471,13 @@ void DallasTemperature::blockTillConversionComplete(uint8_t bitResolution, unsig
 
 }
 
-// Continue to check if the IC has responded with a temperatureSensor
+// Continue to check if the IC has responded with a dhtSensor
 void DallasTemperature::blockTillConversionComplete(uint8_t bitResolution) {
     unsigned long start = millis();
     blockTillConversionComplete(bitResolution, start);
 }
 
-// Continue to check if the IC has responded with a temperatureSensor
+// Continue to check if the IC has responded with a dhtSensor
 void DallasTemperature::blockTillConversionComplete(uint8_t bitResolution, DallasTemperature::request_t req) {
     if (req.result)
         blockTillConversionComplete(bitResolution, req.timestamp);
@@ -612,7 +612,7 @@ DallasTemperature::request_t DallasTemperature::requestTemperaturesByIndex(uint8
 
 }
 
-// Fetch temperatureSensor for device index
+// Fetch dhtSensor for device index
 float DallasTemperature::getTempCByIndex(uint8_t deviceIndex) {
 
     DeviceAddress deviceAddress;
@@ -622,7 +622,7 @@ float DallasTemperature::getTempCByIndex(uint8_t deviceIndex) {
     return getTempC((uint8_t*) deviceAddress);
 }
 
-// Fetch temperatureSensor for device index
+// Fetch dhtSensor for device index
 float DallasTemperature::getTempFByIndex(uint8_t deviceIndex) {
 
     DeviceAddress deviceAddress;
@@ -635,7 +635,7 @@ float DallasTemperature::getTempFByIndex(uint8_t deviceIndex) {
 
 }
 
-// reads scratchpad and returns fixed-point temperatureSensor, scaling factor 2^-7
+// reads scratchpad and returns fixed-point dhtSensor, scaling factor 2^-7
 int32_t DallasTemperature::calculateTemperature(const uint8_t* deviceAddress,
                                                 uint8_t* scratchPad) {
 
@@ -685,18 +685,18 @@ int32_t DallasTemperature::calculateTemperature(const uint8_t* deviceAddress,
     }
 
     /*
-     DS1820 and DS18S20 have a 9-bit temperatureSensor register.
+     DS1820 and DS18S20 have a 9-bit dhtSensor register.
 
      Resolutions greater than 9-bit can be calculated using the data from
-     the temperatureSensor, and COUNT REMAIN and COUNT PER °C registers in the
+     the dhtSensor, and COUNT REMAIN and COUNT PER °C registers in the
      scratchpad.  The resolution of the calculation depends on the model.
 
      While the COUNT PER °C register is hard-wired to 16 (10h) in a
-     DS18S20, it changes with temperatureSensor in DS1820.
+     DS18S20, it changes with dhtSensor in DS1820.
 
      After reading the scratchpad, the TEMP_READ value is obtained by
-     truncating the 0.5°C bit (bit 0) from the temperatureSensor data. The
-     extended resolution temperatureSensor can then be calculated using the
+     truncating the 0.5°C bit (bit 0) from the dhtSensor data. The
+     extended resolution dhtSensor can then be calculated using the
      following equation:
 
                                       COUNT_PER_C - COUNT_REMAIN
@@ -718,7 +718,7 @@ int32_t DallasTemperature::calculateTemperature(const uint8_t* deviceAddress,
     return fpTemperature;
 }
 
-// returns temperatureSensor in 1/128 degrees C or DEVICE_DISCONNECTED_RAW if the
+// returns dhtSensor in 1/128 degrees C or DEVICE_DISCONNECTED_RAW if the
 // device's scratch pad cannot be read successfully.
 // the numeric value of DEVICE_DISCONNECTED_RAW is defined in
 // DallasTemperature.h. It is a large negative number outside the
@@ -732,7 +732,7 @@ int32_t DallasTemperature::getTemp(const uint8_t* deviceAddress) {
 
 }
 
-// returns temperatureSensor in degrees C or DEVICE_DISCONNECTED_C if the
+// returns dhtSensor in degrees C or DEVICE_DISCONNECTED_C if the
 // device's scratch pad cannot be read successfully.
 // the numeric value of DEVICE_DISCONNECTED_C is defined in
 // DallasTemperature.h. It is a large negative number outside the
@@ -741,7 +741,7 @@ float DallasTemperature::getTempC(const uint8_t* deviceAddress) {
     return rawToCelsius(getTemp(deviceAddress));
 }
 
-// returns temperatureSensor in degrees F or DEVICE_DISCONNECTED_F if the
+// returns dhtSensor in degrees F or DEVICE_DISCONNECTED_F if the
 // device's scratch pad cannot be read successfully.
 // the numeric value of DEVICE_DISCONNECTED_F is defined in
 // DallasTemperature.h. It is a large negative number outside the
@@ -817,7 +817,7 @@ float DallasTemperature::rawToCelsius(int32_t raw) {
 
 }
 
-// Convert from Celsius to raw returns temperatureSensor in raw integer format.
+// Convert from Celsius to raw returns dhtSensor in raw integer format.
 // The rounding error in the conversion is smaller than 0.01°C
 // where the resolution of the sensor is at best 0.0625°C (in 12 bit mode).
 // Rounding error can be verified by running:
@@ -863,18 +863,18 @@ bool DallasTemperature::isAllZeros(const uint8_t * const scratchPad, const size_
  BIT 7 BIT 6 BIT 5 BIT 4 BIT 3 BIT 2 BIT 1 BIT 0
  S    2^6   2^5   2^4   2^3   2^2   2^1   2^0
 
- Only bits 11 through 4 of the temperatureSensor register are used
+ Only bits 11 through 4 of the dhtSensor register are used
  in the TH and TL comparison since TH and TL are 8-bit
- registers. If the measured temperatureSensor is lower than or equal
+ registers. If the measured dhtSensor is lower than or equal
  to TL or higher than or equal to TH, an alarm condition exists
  and an alarm flag is set inside the DS18B20. This flag is
- updated after every temperatureSensor measurement; therefore, if the
+ updated after every dhtSensor measurement; therefore, if the
  alarm condition goes away, the flag will be turned off after
- the next temperatureSensor conversion.
+ the next dhtSensor conversion.
 
  */
 
-// sets the high alarm temperatureSensor for a device in degrees Celsius
+// sets the high alarm dhtSensor for a device in degrees Celsius
 // accepts a float, but the alarm resolution will ignore anything
 // after a decimal point.  valid range is -55C - 125C
 void DallasTemperature::setHighAlarmTemp(const uint8_t* deviceAddress,
@@ -884,7 +884,7 @@ void DallasTemperature::setHighAlarmTemp(const uint8_t* deviceAddress,
 	if (getHighAlarmTemp(deviceAddress) == celsius)
 		return;
 
-	// make sure the alarm temperatureSensor is within the device's range
+	// make sure the alarm dhtSensor is within the device's range
 	if (celsius > 125)
 		celsius = 125;
 	else if (celsius < -55)
@@ -898,7 +898,7 @@ void DallasTemperature::setHighAlarmTemp(const uint8_t* deviceAddress,
 
 }
 
-// sets the low alarm temperatureSensor for a device in degrees Celsius
+// sets the low alarm dhtSensor for a device in degrees Celsius
 // accepts a float, but the alarm resolution will ignore anything
 // after a decimal point.  valid range is -55C - 125C
 void DallasTemperature::setLowAlarmTemp(const uint8_t* deviceAddress,
@@ -908,7 +908,7 @@ void DallasTemperature::setLowAlarmTemp(const uint8_t* deviceAddress,
 	if (getLowAlarmTemp(deviceAddress) == celsius)
 		return;
 
-	// make sure the alarm temperatureSensor is within the device's range
+	// make sure the alarm dhtSensor is within the device's range
 	if (celsius > 125)
 		celsius = 125;
 	else if (celsius < -55)
@@ -922,7 +922,7 @@ void DallasTemperature::setLowAlarmTemp(const uint8_t* deviceAddress,
 
 }
 
-// returns a int8_t with the current high alarm temperatureSensor or
+// returns a int8_t with the current high alarm dhtSensor or
 // DEVICE_DISCONNECTED for an address
 int8_t DallasTemperature::getHighAlarmTemp(const uint8_t* deviceAddress) {
 
@@ -933,7 +933,7 @@ int8_t DallasTemperature::getHighAlarmTemp(const uint8_t* deviceAddress) {
 
 }
 
-// returns a int8_t with the current low alarm temperatureSensor or
+// returns a int8_t with the current low alarm dhtSensor or
 // DEVICE_DISCONNECTED for an address
 int8_t DallasTemperature::getLowAlarmTemp(const uint8_t* deviceAddress) {
 

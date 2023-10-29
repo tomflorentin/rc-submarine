@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.24)
-project(surface)
+project(controller)
 
 set(CMAKE_CXX_STANDARD 17)
 set(SFML_ROOT "C:/SFML-2.5.1")
 set(SFML_INCLUDE_DIR "C:/SFML-2.5.1/include")
 
 
-add_executable(surface main.cpp COM.cpp RemoteControl.cpp RemoteControl.hpp SerialPort.cpp SerialPort.hpp KeyboardHandler.cpp KeyboardHandler.hpp Status.cpp Status.hpp PacketHandler.cpp PacketHandler.hpp)
+add_executable(controller main.cpp COM.cpp RemoteControl.cpp RemoteControl.hpp SerialPort.cpp SerialPort.hpp KeyboardHandler.cpp KeyboardHandler.hpp Status.cpp Status.hpp PacketHandler.cpp PacketHandler.hpp)
 
 
 # Copies all the DLL from ${SFML_ROOT}/bin to the root of the build directory

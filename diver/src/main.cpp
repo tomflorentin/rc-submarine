@@ -20,7 +20,8 @@
 DepthSensor outsideDepthSensor = DepthSensor(11);
 DepthSensor insideDepthSensor = DepthSensor(12);
 BatteryLevelSensor batteryLevel = BatteryLevelSensor(1);
-TemperatureSensor temperatureSensor = TemperatureSensor(30);
+//TemperatureSensor dhtSensor = TemperatureSensor(30);
+DHT dhtSensor = DHT(30);
 
 // Main controllers
 
@@ -49,7 +50,7 @@ LedController led = LedController(3, 25);
 
 RemoteControl remote = RemoteControl(&depthController, &engine, &led, &camera);
 
-SensorMonitor sensorMonitor = SensorMonitor(&remote, &temperatureSensor, &insideDepthSensor, &batteryLevel);
+SensorMonitor sensorMonitor = SensorMonitor(&remote, &dhtSensor, &insideDepthSensor, &batteryLevel);
 
 // Security
 BatterySecurity batterySecurity = BatterySecurity(&batteryLevel);
@@ -77,14 +78,13 @@ void setup() {
 
     setupLogger(&remote);
 
-//    temperatureSensor.setup();
+//    dhtSensor.setup();
 
     // Camera power
     powerManager.drawPower(12345, 20);
 
     // Arduino power
     powerManager.drawPower(6789, 5);
-
 }
 
 bool isDiving = false;

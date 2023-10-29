@@ -4,11 +4,11 @@
 
 #include "SensorMonitor.hpp"
 
-SensorMonitor::SensorMonitor(RemoteControl *_control, TemperatureSensor *_temperature, DepthSensor *_insidePressure,
+SensorMonitor::SensorMonitor(RemoteControl *_control, DHT *_dht, DepthSensor *_insidePressure,
                              BatteryLevelSensor *_batteryLevelSensor)
                              :
         control(_control),
-        temperatureSensor(_temperature),
+        dhtSensor(_dht),
         insidePressure(_insidePressure),
         batteryLevelSensor(_batteryLevelSensor) {
 
@@ -24,11 +24,13 @@ void SensorMonitor::work() {
     lastRead = now;
 
     // Read sensors
-    float temperature = this->temperatureSensor->getTemperature();
+    float temperature = this->dhtSensor->readTemperature();
+    float humidity = this->dhtSensor->readHumidity();
     float pressure = this->insidePressure->getPressure();
     uint8_t batteryLevel = this->batteryLevelSensor->getLevel();
 
     // Send data to remote
+    control->sendConstant(Command::INSIDE_HUMIDITY, humidity);
     control->sendConstant(Command::INSIDE_TEMPERATURE, temperature);
     control->sendConstant(Command::INSIDE_PRESSURE, pressure);
     control->sendConstant(Command::BATTERY, batteryLevel);

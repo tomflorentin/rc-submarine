@@ -40,7 +40,7 @@ Version 2.3:
 Version 2.2:
   Teensy 3.0 compatibility, Paul Stoffregen, paul@pjrc.com
   Arduino Due compatibility, http://arduino.cc/forum/index.php?topic=141030
-  Fix DS18B20 example negative temperatureSensor
+  Fix DS18B20 example negative dhtSensor
   Fix DS18B20 example's low res modes, Ken Butcher
   Improve reset timing, Mark Tillotson
   Add const qualifiers, Bertrik Sikken
@@ -49,7 +49,7 @@ Version 2.2:
 
 Version 2.1:
   Arduino 1.0 compatibility, Paul Stoffregen
-  Improve temperatureSensor example, Paul Stoffregen
+  Improve dhtSensor example, Paul Stoffregen
   DS250x_PROM example, Guillermo Lovato
   PIC32 (chipKit) compatibility, Jason Dangel, dangel.jason AT gmail.com
   Improvements from Glenn Trewitt:

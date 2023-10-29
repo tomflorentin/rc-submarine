@@ -17,10 +17,28 @@ KeyboardHandler::KeyboardHandler(RemoteControl *_remoteControl, Status *_status)
     this->lightsPayload.left = false;
     this->lightsPayload.right = false;
     this->lightsPayload.intensity = 100;
+
+
+    // Construct the keymap string
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::Forward) + " : Forward\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::Backward) + " : Backward\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::Left) + " : Left\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::Right) + " : Right\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::Up) + " : Up\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::Down) + " : Down\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::LIGHT_UP) + " : Light up\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::LIGHT_DOWN) + " : Light down\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::CAMERA_UP) + " : Camera up\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::CAMERA_DOWN) + " : Camera down\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::POWER_UP) + " : Power up\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::POWER_DOWN) + " : Power down\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::START_STOP_DIVE) + " : Start/stop dive\n";
+    this->keymapText += this->mapSfKeyToStr(KeyboardCommand::SERVICE_SYRINGE) + " : Service syringe\n";
 }
 
 void KeyboardHandler::handleKey(sf::Keyboard::Key key, bool shift) {
-    if ((int)this->lastKey == (int)key && std::chrono::steady_clock::now() - this->lastKeyTime < std::chrono::milliseconds(100)) {
+    if ((int) this->lastKey == (int) key &&
+        std::chrono::steady_clock::now() - this->lastKeyTime < std::chrono::milliseconds(100)) {
         return;
     }
     this->lastKey = (KeyboardCommand) key;
@@ -154,4 +172,132 @@ void KeyboardHandler::handleKey(sf::Keyboard::Key key, bool shift) {
 
 char const *KeyboardHandler::getCommandText() const {
     return this->commandText;
+}
+
+char const *KeyboardHandler::getKeymapText() const {
+    return this->keymapText.c_str();
+}
+
+std::string KeyboardHandler::mapSfKeyToStr(KeyboardCommand key) {
+    switch ((sf::Keyboard::Key) key) {
+        case sf::Keyboard::Unknown:
+            return "Unknown";
+        case sf::Keyboard::A:
+            return "A";
+        case sf::Keyboard::B:
+            return "B";
+        case sf::Keyboard::C:
+            return "C";
+        case sf::Keyboard::D:
+            return "D";
+        case sf::Keyboard::E:
+            return "E";
+        case sf::Keyboard::F:
+            return "F";
+        case sf::Keyboard::G:
+            return "G";
+        case sf::Keyboard::H:
+            return "H";
+        case sf::Keyboard::I:
+            return "I";
+        case sf::Keyboard::J:
+            return "J";
+        case sf::Keyboard::K:
+            return "K";
+        case sf::Keyboard::L:
+            return "L";
+        case sf::Keyboard::M:
+            return "M";
+        case sf::Keyboard::N:
+            return "N";
+        case sf::Keyboard::O:
+            return "O";
+
+        case sf::Keyboard::P:
+            return "P";
+        case sf::Keyboard::Q:
+            return "Q";
+        case sf::Keyboard::R:
+            return "R";
+        case sf::Keyboard::S:
+            return "S";
+        case sf::Keyboard::T:
+            return "T";
+        case sf::Keyboard::U:
+            return "U";
+        case sf::Keyboard::V:
+            return "V";
+        case sf::Keyboard::W:
+            return "W";
+        case sf::Keyboard::X:
+            return "X";
+        case sf::Keyboard::Y:
+            return "Y";
+        case sf::Keyboard::Z:
+            return "Z";
+        case sf::Keyboard::Num0:
+            return "Num0";
+        case sf::Keyboard::Num1:
+            return "Num1";
+        case sf::Keyboard::Num2:
+            return "Num2";
+        case sf::Keyboard::Num3:
+            return "Num3";
+        case sf::Keyboard::Num4:
+            return "Num4";
+        case sf::Keyboard::Num5:
+            return "Num5";
+        case sf::Keyboard::Num6:
+            return "Num6";
+        case sf::Keyboard::Num7:
+            return "Num7";
+        case sf::Keyboard::Num8:
+            return "Num8";
+        case sf::Keyboard::Num9:
+            return "Num9";
+        case sf::Keyboard::Escape:
+            return "Escape";
+        case sf::Keyboard::LControl:
+            return "LControl";
+        case sf::Keyboard::LShift:
+            return "LShift";
+        case sf::Keyboard::LAlt:
+            return "LAlt";
+        case sf::Keyboard::LSystem:
+            return "LSystem";
+        case sf::Keyboard::RControl:
+            return "RControl";
+        case sf::Keyboard::RShift:
+            return "RShift";
+        case sf::Keyboard::RAlt:
+            return "RAlt";
+        case sf::Keyboard::RSystem:
+            return "RSystem";
+        case sf::Keyboard::Menu:
+            return "Menu";
+        case sf::Keyboard::LBracket:
+            return "LBracket";
+        case sf::Keyboard::RBracket:
+            return "RBracket";
+        case sf::Keyboard::SemiColon:
+            return "SemiColon";
+        case sf::Keyboard::Comma:
+            return "Comma";
+        case sf::Keyboard::Period:
+            return "Period";
+        case sf::Keyboard::Quote:
+            return "Quote";
+        case sf::Keyboard::Slash:
+            return "Slash";
+        case sf::Keyboard::BackSlash:
+            return "BackSlash";
+        case sf::Keyboard::Tilde:
+            return "Tilde";
+        case sf::Keyboard::Tab:
+            return "Tab";
+        case sf::Keyboard::Enter:
+            return "Enter";
+        default:
+            return "Unknown";
+    }
 }

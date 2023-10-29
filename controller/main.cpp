@@ -42,16 +42,16 @@ void forwardThread() {
 //int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 int main()
 {
-    std::string comPort = SelectComPort();
-    serial = new RemoteControl(comPort.c_str());
+//    std::string comPort = SelectComPort();
+//    serial = new RemoteControl(comPort.c_str());
     keyboardHandler = new KeyboardHandler(serial, &status);
-
-    if (serial->isConnected()) {
-        std::cout << "Connected to COM" << std::endl;
-    } else {
-        std::cout << "Failed to connect to COM" << std::endl;
-        exit(1);
-    }
+//
+//    if (serial->isConnected()) {
+//        std::cout << "Connected to COM" << std::endl;
+//    } else {
+//        std::cout << "Failed to connect to COM" << std::endl;
+//        exit(1);
+//    }
 
 
     auto activeWindow = GetActiveWindow();
@@ -78,12 +78,12 @@ int main()
     MARGINS margins;
     margins.cxLeftWidth = -1;
 
-    SetWindowLong(window->getSystemHandle(), GWL_STYLE, WS_POPUP | WS_VISIBLE);
-    DwmExtendFrameIntoClientArea(window->getSystemHandle(), &margins);
-
-    int extendedStyle = GetWindowLong(window->getSystemHandle(), GWL_EXSTYLE);
-    SetWindowLong(window->getSystemHandle(), GWL_EXSTYLE, extendedStyle | WS_EX_TRANSPARENT | WS_EX_LAYERED);
-    SetWindowPos(window->getSystemHandle(), HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+//    SetWindowLong(window->getSystemHandle(), GWL_STYLE, WS_POPUP | WS_VISIBLE);
+//    DwmExtendFrameIntoClientArea(window->getSystemHandle(), &margins);
+//
+//    int extendedStyle = GetWindowLong(window->getSystemHandle(), GWL_EXSTYLE);
+//    SetWindowLong(window->getSystemHandle(), GWL_EXSTYLE, extendedStyle | WS_EX_TRANSPARENT | WS_EX_LAYERED);
+//    SetWindowPos(window->getSystemHandle(), HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
 
     bool enabled = false;
 
@@ -101,13 +101,20 @@ int main()
     statusText.setFillColor(sf::Color::Color::Red);
     statusText.setScale(sf::Vector2f(1, 1));
 
+    sf::Text keymapText;
+    keymapText.setFont(font);
+    keymapText.setPosition({(float)(cxPhysical - 500), (float)(cyPhysical - 800) });
+    keymapText.setFillColor(sf::Color::Color::Red);
+    keymapText.setScale(sf::Vector2f(1, 1));
+    keymapText.setString(keyboardHandler->getKeymapText());
+
     auto hwnd = window->getSystemHandle();
 //    sf::Event event;
-    std::thread(&serialThread).detach();
+//    std::thread(&serialThread).detach();
 //    std::thread(&forwardThread).detach();
 
     while (window->isOpen()) {
-        SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE);
+//        SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE);
         Sleep(200);
         while (window->pollEvent(event))
         {
@@ -136,6 +143,7 @@ int main()
         statusText.setString(status.getStatusText());
         window->draw(keyText);
         window->draw(statusText);
+        window->draw(keymapText);
         window->display();
     }
     return 0;

@@ -34,6 +34,7 @@ public:
 
     void handleKey(sf::Keyboard::Key key, bool shift);
     char const *getCommandText() const;
+    char const *getKeymapText() const;
 
 private:
     RemoteControl *remoteControl;
@@ -44,10 +45,13 @@ private:
     LightsPayload lightsPayload;
     float manualDivePayload;
 
-    char commandText[1024];
+    char commandText[1024] = {0};
+    std::string keymapText = "Keymap reminder :\n";
 
     std::chrono::steady_clock::time_point lastKeyTime = std::chrono::steady_clock::now();
     KeyboardCommand lastKey = KeyboardCommand::NONE;
+
+    std::string mapSfKeyToStr(KeyboardCommand key);
 };
 
 
