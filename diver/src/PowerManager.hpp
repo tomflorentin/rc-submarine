@@ -5,7 +5,7 @@
 #ifndef EMBARQUE_POWERMANAGER_HPP
 #define EMBARQUE_POWERMANAGER_HPP
 
-#define MAX_DEVICES 128
+#define MAX_DEVICES 16
 
 class PowerManager {
 public:

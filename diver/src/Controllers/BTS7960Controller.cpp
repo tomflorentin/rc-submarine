@@ -17,7 +17,7 @@ void BTS7960Controller::setup() {
 }
 
 void BTS7960Controller::forward(uint8_t speed) {
-    Log("Forward " + String(speed));
+//    Log("Forward " + String(speed));
     len.write(true);
     ren.write(false);
     lpwm.write(speed);
@@ -26,7 +26,7 @@ void BTS7960Controller::forward(uint8_t speed) {
 }
 
 void BTS7960Controller::backward(uint8_t speed) {
-    Log("Backward " + String(speed));
+//    Log("Backward " + String(speed));
     len.write(false);
     ren.write(true);
     lpwm.write(0);

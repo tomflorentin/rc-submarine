@@ -58,7 +58,7 @@ void EngineController::work() {
     unsigned long now = millis();
     if (now - this->lastOrderTime > 500) {
         if (this->targetRightSpeed) {
-            Log("Stopped because no order for too long");
+            // Log("Stopped because no order for too long");
         }
         this->targetRightSpeed = 0;
         this->targetLeftSpeed = 0;

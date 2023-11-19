@@ -15,7 +15,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42c4cf7c-13b4-402f-98bb-ea86da40617f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../controller/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../controller/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platformio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/platformio.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/BTS7960Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BTS7960Controller.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/BallastController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BallastController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/CameraController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CameraController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/EngineController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EngineController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PowerManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PowerManager.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RemoteControl/ControlProtocol.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/RemoteControl/ControlProtocol.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/SecurityMonitor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/SecurityMonitor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sensors/TemperatureSensor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sensors/TemperatureSensor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sensors/TemperatureSensor.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sensors/TemperatureSensor.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/DallasTemperature.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/DallasTemperature.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/DallasTemperature.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/DallasTemperature.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +39,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="megaatmega2560" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="uno" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -97,7 +111,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;clion.platformio.config&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -112,18 +126,28 @@
       <recent name="C:\Users\tomfl\Sous-Marin\embarque\src\Sensors" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PlatformIO.PlatformIO">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlatformIO" type="platformio" factoryName="PlatformIO Debug" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="platformio" factoryName="PlatformIO Debug" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
+      <method v="2" />
+    </configuration>
     <configuration name="Unnamed" type="platformio" factoryName="PlatformIO Debug" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
       <method v="2" />
     </configuration>
     <configuration name="Unnamed" type="platformio" factoryName="PlatformIO Debug" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="PlatformIO.PlatformIO" />
+      <item itemvalue="PlatformIO.Unnamed" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -172,6 +196,11 @@
       <workItem from="1698599347247" duration="268000" />
       <workItem from="1698599871543" duration="2000" />
       <workItem from="1698599888138" duration="590000" />
+      <workItem from="1698658326194" duration="20000" />
+      <workItem from="1700327622372" duration="14000" />
+      <workItem from="1700387491904" duration="3065000" />
+      <workItem from="1700406088247" duration="514000" />
+      <workItem from="1700408686572" duration="607000" />
     </task>
     <servers />
   </component>

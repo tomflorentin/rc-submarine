@@ -21,7 +21,7 @@ SecurityMonitor::SecurityMonitor(RemoteControl *_remote,
 
 void SecurityMonitor::addModule(Security *module) {
     if (this->nextModuleIndex >= NUMBER_OF_SECURITY_MODULES) {
-        Log("Not adding a security module");
+        // Log("Not adding a security module");
         return;
     }
 

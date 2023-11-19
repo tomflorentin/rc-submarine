@@ -81,7 +81,7 @@ Command ControlProtocol::receivePacket() {
         return Command::NO_COMMAND;
 
     if (checksum != receivedChecksum) {
-        Log("Checksum is not correct");
+        // Log("Checksum is not correct");
         return Command::NO_COMMAND;
     }
 

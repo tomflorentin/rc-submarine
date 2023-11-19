@@ -18,9 +18,9 @@ void CameraController::setup() {
 
 void CameraController::setAngle(uint8_t angle) {
     if (angle < 20 || angle > 150) {
-        Log("Angle must be between 20 and 150");
+        // Log("Angle must be between 20 and 150");
         return;
     }
-    Log("Setting camera angle to " + String(angle));
+    // Log("Setting camera angle to " + String(angle));
     this->servo.write(angle);
 }
