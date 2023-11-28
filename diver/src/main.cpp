@@ -15,6 +15,7 @@
 #include "Controllers/CameraController.hpp"
 #include "Sensors/TemperatureSensor.hpp"
 #include "PowerManager.hpp"
+
 //
 //// Sensors
 DepthSensor outsideDepthSensor = DepthSensor(11);
@@ -39,12 +40,9 @@ DepthController depthController = DepthController(&ballastController, &outsideDe
 
 EngineController engine = EngineController(5,
                                            6,
-                                           3,
-                                           4,
-                                           0,
-                                           0,
                                            0,
                                            0);
+
 
 LedController led = LedController(3, 25);
 
@@ -64,29 +62,29 @@ unsigned long elapsed = 0;
 
 void setup() {
     randomSeed(analogRead(0));
-    ballastController.setup();
+//    ballastController.setup();
     engine.setup();
 //    led.setup();
-    camera.setup();
+//    camera.setup();
 //    outsideDepthSensor.setup();
 //    insideDepthSensor.setup();
 //    batteryLevel.setup();
-      remote.setup();
+//      remote.setup();
 //    waterSecurity.setup();
 
 //    securityMonitor.addModule(&batterySecurity);
 //    securityMonitor.addModule(&depthSecurity);
 //    securityMonitor.addModule(&waterSecurity);
 
-    setupLogger(&remote);
-
-    dhtSensor.begin();
-
-    // Camera power
-    powerManager.drawPower(12345, 20);
-
-    // Arduino power
-    powerManager.drawPower(6789, 5);
+//    setupLogger(&remote);
+//
+//    dhtSensor.begin();
+//
+//    // Camera power
+//    powerManager.drawPower(12345, 20);
+//
+//    // Arduino power
+//    powerManager.drawPower(6789, 5);
 }
 
 bool isDiving = false;
@@ -95,32 +93,26 @@ int i = 20;
 
 void loop() {
 
-    sensorMonitor.work();
-    remote.work(&isDiving);
-    depthController.work();
-    ballastController.work();
     engine.work();
-    powerManager.work();
-//
-    if (isDiving) {
-        securityMonitor.work();
-    }
-
-//    elapsed += millis();
-//    if (elapsed > 35000) {
-//        engine.move(0, 0, 0, 0);
-//        elapsed = 0;
-//    } else if (elapsed > 30000) {
-//        engine.move(255, 0, 255, 255);
-//    } else if (elapsed > 25000) {
-//        engine.move(200, 0, 255, 255);
-//    } else if (elapsed > 20000) {
-//        engine.move(150, 0, 255, 255);
-//    } else if (elapsed > 1500) {
-//        engine.move(100, 0, 255, 255);
-//    } else if (elapsed > 10000) {
-//        engine.move(50, 0, 255, 255);
-//    } else if (elapsed > 5000) {
-//        engine.move(0, 0, 255, 255);
+//    sensorMonitor.work();
+//    remote.work(&isDiving);
+//    depthController.work();
+//    ballastController.work();
+//    engine.work();
+//    powerManager.work();
+////
+//    if (isDiving) {
+//        securityMonitor.work();
 //    }
+
+    elapsed += millis();
+    if (elapsed > 15000) {
+        engine.move(127, 127, 255, 255);
+        elapsed = 0;
+        return;
+    }
+    if (elapsed > 5000) {
+        engine.move(0, 127, 255, 255);
+        return;
+    }
 }

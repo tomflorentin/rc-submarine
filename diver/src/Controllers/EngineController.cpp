@@ -9,10 +9,10 @@
 const short TIME_TO_ACCELERATE = 10000;
 const float ACCELERATION_COEFF = 255.f / TIME_TO_ACCELERATE;
 
-EngineController::EngineController(uint8_t right_rpwm, uint8_t right_lpwm, uint8_t right_ren, uint8_t right_len,
-                                   uint8_t left_rpwm, uint8_t left_lpwm, uint8_t left_ren, uint8_t left_len) :
-        rightMotor(right_lpwm, right_rpwm, right_len, right_ren, 100),
-        leftMotor(left_lpwm, left_rpwm, left_len, left_ren, 100) {}
+EngineController::EngineController(uint8_t right_rpwm, uint8_t right_lpwm,
+                                   uint8_t left_rpwm, uint8_t left_lpwm) :
+        rightMotor(right_lpwm, right_rpwm, 100),
+        leftMotor(left_lpwm, left_rpwm, 100) {}
 
 
 void EngineController::setup() {

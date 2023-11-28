@@ -14,21 +14,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42c4cf7c-13b4-402f-98bb-ea86da40617f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    <list default="true" id="42c4cf7c-13b4-402f-98bb-ea86da40617f" name="Changes" comment="final overview image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platformio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/platformio.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/BTS7960Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BTS7960Controller.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/BallastController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BallastController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CameraController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CameraController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/EngineController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EngineController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PowerManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PowerManager.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RemoteControl/ControlProtocol.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/RemoteControl/ControlProtocol.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/SecurityMonitor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/SecurityMonitor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sensors/TemperatureSensor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sensors/TemperatureSensor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sensors/TemperatureSensor.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sensors/TemperatureSensor.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/DallasTemperature.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/DallasTemperature.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/DallasTemperature.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/DallasTemperature.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/EngineController.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EngineController.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +36,11 @@
     </projectState>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -95,26 +90,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tomfl/Sous-Marin/embarque/src/Interfaces&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;clion.platformio.config&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "L298-engine",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/tomfl/Sous-Marin/embarque/src/Interfaces",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "clion.platformio.config",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tomfl\Sous-Marin\embarque\src\Interfaces" />
@@ -127,12 +122,30 @@
     </key>
   </component>
   <component name="RunManager" selected="PlatformIO.PlatformIO">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="PlatformIO" type="platformio" factoryName="PlatformIO Debug" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
+      <method v="2" />
+    </configuration>
+    <configuration name="PlatformIO" type="platformio" factoryName="PlatformIO Debug" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
+      <method v="2" />
+    </configuration>
+    <configuration name="PlatformIO" type="platformio" factoryName="PlatformIO Debug" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
+      <method v="2" />
+    </configuration>
+    <configuration name="PlatformIO" type="platformio" factoryName="PlatformIO Debug" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="platformio" factoryName="PlatformIO Debug" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="platformio" factoryName="PlatformIO Debug" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="platformio" factoryName="PlatformIO Debug" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
       <method v="2" />
     </configuration>
     <configuration name="Unnamed" type="platformio" factoryName="PlatformIO Debug" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
@@ -200,8 +213,28 @@
       <workItem from="1700327622372" duration="14000" />
       <workItem from="1700387491904" duration="3065000" />
       <workItem from="1700406088247" duration="514000" />
-      <workItem from="1700408686572" duration="607000" />
+      <workItem from="1700408686572" duration="2105000" />
+      <workItem from="1701015496094" duration="220000" />
+      <workItem from="1701015731273" duration="1400000" />
+      <workItem from="1701198093690" duration="162000" />
     </task>
+    <task id="LOCAL-00001" summary="fit code into arduino UNO">
+      <option name="closed" value="true" />
+      <created>1700415770078</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700415770078</updated>
+    </task>
+    <task id="LOCAL-00002" summary="final overview image">
+      <option name="closed" value="true" />
+      <created>1700416135741</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700416135741</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +247,9 @@
     <isAutomaticFoundErrors value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="fit code into arduino UNO" />
+    <MESSAGE value="final overview image" />
+    <option name="LAST_COMMIT_MESSAGE" value="final overview image" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

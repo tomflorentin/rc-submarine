@@ -12,8 +12,8 @@
 
 class EngineController : public ISetupable {
 public:
-    EngineController(uint8_t right_rpwm, uint8_t right_lpwm, uint8_t right_ren , uint8_t right_len,
-                     uint8_t left_rpwm, uint8_t left_lpwm, uint8_t left_ren , uint8_t left_len);
+    EngineController(uint8_t right_rpwm, uint8_t right_lpwm,
+                     uint8_t left_rpwm, uint8_t left_lpwm);
     void setup() override;
 
     void move(uint8_t forward, uint8_t turn, uint8_t speedCoeff, uint8_t turnCoeff);
@@ -29,8 +29,8 @@ private:
     unsigned long lastSpeedChange = 0;
     unsigned long lastOrderTime = 0;
     bool isLocked = false;
-    BTS7960Controller rightMotor;
-    BTS7960Controller leftMotor;
+    L298Controller rightMotor;
+    L298Controller leftMotor;
 
     static short calcNewSpeed(short targetSpeed, short currentSpeed, unsigned long timeDiff);
 
