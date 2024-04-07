@@ -15,10 +15,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42c4cf7c-13b4-402f-98bb-ea86da40617f" name="Changes" comment="final overview image">
+      <change beforePath="$PROJECT_DIR$/../controller/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../controller/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../controller/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../controller/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platformio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/platformio.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EngineController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EngineController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/EngineController.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/EngineController.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/BallastController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BallastController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PinReader/DigitalPinReader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PinReader/DigitalPinReader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PinReader/DigitalPinReader.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/PinReader/DigitalPinReader.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sensors/UltrasonicSensor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sensors/UltrasonicSensor.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +65,7 @@
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="embarque" />
+                <option name="name" value="diver" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
             </list>
@@ -92,9 +95,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "PlatformIO.PlatformIO.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
@@ -137,6 +142,12 @@
       <method v="2" />
     </configuration>
     <configuration name="PlatformIO" type="platformio" factoryName="PlatformIO Debug" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
+      <method v="2" />
+    </configuration>
+    <configuration name="PlatformIO" type="platformio" factoryName="PlatformIO Debug" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="platformio" factoryName="PlatformIO Debug" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
       <method v="2" />
     </configuration>
     <configuration name="Unnamed" type="platformio" factoryName="PlatformIO Debug" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="diver" TARGET_NAME="PlatformIO" CONFIG_NAME="PlatformIO">
@@ -217,6 +228,8 @@
       <workItem from="1701015496094" duration="220000" />
       <workItem from="1701015731273" duration="1400000" />
       <workItem from="1701198093690" duration="162000" />
+      <workItem from="1701597530581" duration="1954000" />
+      <workItem from="1712502507084" duration="3535000" />
     </task>
     <task id="LOCAL-00001" summary="fit code into arduino UNO">
       <option name="closed" value="true" />

@@ -5,7 +5,7 @@
 #include <Arduino.h>
 #include "UltrasonicSensor.hpp"
 
-UltrasonicSensor::UltrasonicSensor(uint8_t _triggerPin, uint8_t _echoPin) : triggerPin(_triggerPin), echoPin(_echoPin){
+UltrasonicSensor::UltrasonicSensor(uint8_t _triggerPin, uint8_t _echoPin) : triggerPin(_triggerPin), echoPin(_echoPin, false){
 }
 
 float UltrasonicSensor::getDistance(int cacheMilleseconds) {

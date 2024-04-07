@@ -42,16 +42,16 @@ void forwardThread() {
 //int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 int main()
 {
-//    std::string comPort = SelectComPort();
-//    serial = new RemoteControl(comPort.c_str());
+    std::string comPort = SelectComPort();
+    serial = new RemoteControl(comPort.c_str());
     keyboardHandler = new KeyboardHandler(serial, &status);
-//
-//    if (serial->isConnected()) {
-//        std::cout << "Connected to COM" << std::endl;
-//    } else {
-//        std::cout << "Failed to connect to COM" << std::endl;
-//        exit(1);
-//    }
+
+    if (serial->isConnected()) {
+        std::cout << "Connected to COM" << std::endl;
+    } else {
+        std::cout << "Failed to connect to COM" << std::endl;
+        exit(1);
+    }
 
 
     auto activeWindow = GetActiveWindow();
@@ -109,8 +109,8 @@ int main()
     keymapText.setString(keyboardHandler->getKeymapText());
 
     auto hwnd = window->getSystemHandle();
-//    sf::Event event;
-//    std::thread(&serialThread).detach();
+    sf::Event event;
+    std::thread(&serialThread).detach();
 //    std::thread(&forwardThread).detach();
 
     while (window->isOpen()) {

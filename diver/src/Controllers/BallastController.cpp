@@ -12,7 +12,7 @@ BallastController::BallastController(uint8_t _ultrasonicTriggerPin, uint8_t _ult
                                      uint8_t _motorPin2, uint8_t _fullLimitSwitchPin, uint8_t _emptyLimitSwitchPin,
                                      uint8_t _valvePin)
         : ultrasonicSensor(_ultrasonicTriggerPin, _ultrasonicEchoPin),
-          fullLimitSwitch(_fullLimitSwitchPin), emptyLimitSwitch(_emptyLimitSwitchPin),
+          fullLimitSwitch(_fullLimitSwitchPin, true), emptyLimitSwitch(_emptyLimitSwitchPin, true),
           motorController(_motorPin1, _motorPin2, 5), valveController(_valvePin) {
 
 }
@@ -33,13 +33,13 @@ void BallastController::empty() {
 
 void BallastController::fill() {
     bool isFull = this->fullLimitSwitch.read();
-    // Log("Start filling " + String(isFull));
+     Log("Start filling " + String(isFull));
     if (!isFull) {
         this->isMoving = 1;
         this->valveController.open();
         this->motorController.backward(255);
     } else {
-        // Log("Standby because full");
+         Log("Standby because full");
         this->standby();
     }
 }
@@ -58,22 +58,22 @@ void BallastController::work() {
     bool isEmpty = this->emptyLimitSwitch.read();
     bool isFull = this->fullLimitSwitch.read();
 
-    // Log("IsCleaning: " + String(this->isCleaning) + " isEmpty: " + String(isEmpty) + " isFull: " + String(isFull));
+     Log("IsCleaning: " + String(this->isCleaning) + " isEmpty: " + String(isEmpty) + " isFull: " + String(isFull));
 
     if (this->isCleaning == CleaningProcess::EMPTYING_OLD_WATER && isEmpty) {
-        // Log("Filling clear water");
+         Log("Filling clear water");
         this->isCleaning = CleaningProcess::FILLING_CLEAR_WATER;
         this->fill();
         return;
     }
     if (this->isCleaning == CleaningProcess::FILLING_CLEAR_WATER && isFull) {
-        // Log("Emptying clear water");
+         Log("Emptying clear water");
         this->isCleaning = CleaningProcess::EMPTYING_CLEAR_WATER;
         this->empty();
         return;
     }
     if (this->isCleaning == CleaningProcess::EMPTYING_CLEAR_WATER && isEmpty) {
-        // Log("Cleaning process finished");
+         Log("Cleaning process finished");
         this->isCleaning = CleaningProcess::NOT_CLEANING;
         this->standby();
         return;
@@ -108,7 +108,7 @@ uint8_t BallastController::getFillPercentage() {
 }
 
 void BallastController::clean() {
-    // Log("Starting cleaning process");
+     Log("Starting cleaning process");
     if (this->emptyLimitSwitch.read()) {
         this->fill();
         this->isCleaning = FILLING_CLEAR_WATER;
